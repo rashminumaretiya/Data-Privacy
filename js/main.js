@@ -8,7 +8,7 @@ $(window).scroll(function () {
 });
 
 
-$(".company-slider").owlCarousel({
+$(".company-slider, .trusted-company").owlCarousel({
   loop: true,
   margin: 10,
   nav: false,
@@ -28,6 +28,20 @@ $(".company-slider").owlCarousel({
     },
     1000: {
       items: 6,
+    },
+  },
+});
+$(".testimonial-slider").owlCarousel({
+  loop: true,
+  margin: 0,
+  nav: false,
+  dots: false,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    767: {
+      items: 2,
     },
   },
 });
