@@ -21,12 +21,18 @@ $(".company-slider, .trusted-company").owlCarousel({
       items: 2,
     },
     600: {
+      items: 2.5,
+    },
+    767: {
       items: 3,
     },
-    900: {
-      items: 4,
+    991: {
+      items: 4.5,
     },
-    1000: {
+    1200: {
+      items: 5,
+    },
+    1400: {
       items: 6,
     },
   },
