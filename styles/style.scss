@@ -35,6 +35,9 @@ body {
     font-size: 14px;
   }
 }
+.font-manrope {
+  font-family: "Manrope", sans-serif;
+}
 p {
   font-size: 20px;
   color: $gray;
@@ -166,6 +169,12 @@ input {
 }
 .section{
   padding: 75px 0;
+}
+.pt-100 {
+  padding-top: 100px;
+}
+.pt-150 {
+  padding-top: 150px;
 }
 
 // Header Styles
@@ -332,11 +341,47 @@ header {
   background-position: top center;
   background-size: cover;
   padding: 100px 0;
+  position: relative;
   @media screen and (max-width: 991px) {
     padding: 80px 0;
   }
   @media screen and (max-width: 767px) {
     padding: 50px 0;
+  }
+  .star-icon {
+    img {
+      position: absolute;
+    }
+    .star-outline1 {
+      width: 33px;
+      top: 14%;
+      left: 14%;
+      @media screen and (max-width: 991px) {
+        top: 10%;
+        left: 8%;
+      }
+      @media screen and (max-width: 575px) {
+        top: 5%;
+        left: 3%;
+      }
+    }
+    .star-outline2 {
+      width: 63px;
+      top: 40%;
+      right: 10%;
+      @media screen and (max-width: 1440px) {
+        right: 2%;
+      }
+    }
+    .star-outline3 {
+      width: 33px;
+      bottom: 15%;
+      left: 5%;
+      @media screen and (max-width: 991px) {
+        bottom: 5%;
+        left: 3%;
+      }
+    }
   }
   .trusted-company {
     .item {
@@ -607,10 +652,13 @@ footer {
 
 // HERO SECTION CSS
 .hero-section{
-  padding: 160px 0 50px;
+  padding: 80px 0 50px;
   background-color: $gray-200;
   display: flex;
   align-items: center;
+  .desc {
+    max-width: 630px;
+  }
   .desc, .btn{
     margin-top: 20px;
     @media screen and (max-width: 475px) {
@@ -620,7 +668,7 @@ footer {
   .star-outline{
     position: absolute;
     top: 29%;
-    right: -9%;
+    right: 3%;
     @media screen and (max-width: 991px) {
       right: 12px;
       top: -37px;
@@ -630,6 +678,9 @@ footer {
     }
   }
   .details{
+    @media screen and (min-width: 992px) {
+      padding-left: 40px;
+    }
     label{
       color: $gray;
       font-size: 14px; 
@@ -691,7 +742,7 @@ footer {
 
 // SLIDER SECTION CSS
 .slider-section{
-  padding: 50px 0;
+  padding: 50px 0 80px;
   &.home-slider{
     background-color: $gray-200;
   }
@@ -799,6 +850,31 @@ footer {
     }
     @media screen and (max-width: 575px) {
       max-width: 100%;
+    }
+  }
+}
+
+/* Contact Styles */
+.contact-wrapper {
+  min-height: 890px;
+  background-color: $gray-200;
+  position: relative;
+  .star-icon {
+    img {
+      position: absolute;
+      &.contact-green-star1 {
+        left: 27%;
+        top: 31%;
+      }
+      &.contact-green-star2 {
+        left: 28.5%;
+        top: 28%;
+        width: 18px;
+      }
+      &.contact-star-outline1 {
+        right: 27%;
+        top: 19%;
+      }
     }
   }
 }
