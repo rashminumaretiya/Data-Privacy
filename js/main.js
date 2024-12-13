@@ -45,3 +45,17 @@ $(".testimonial-slider").owlCarousel({
     },
   },
 });
+
+
+const accordionButtons = document.querySelectorAll('.accordion-button');
+    const dynamicImage = document.getElementById('dynamicImage');
+
+    // Add click event listeners to each button
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Get the image URL from the data attribute
+        const imageUrl = button.getAttribute('data-image');
+        // Update the dynamic image
+        dynamicImage.src = imageUrl;
+      });
+    });
