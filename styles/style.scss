@@ -4,17 +4,20 @@
 @import "../bootstrap/scss/functions";
 @import "../bootstrap/scss/variables";
 
-$primary: #00B894;
-$primary-light: #E8FFFA;
-$dark-gray: #101C34;
-$gray: #5F5F5F;
+$primary: #00b894;
+$primary-light: #e8fffa;
+$dark-gray: #101c34;
+$dark-gray-100: #222222;
+$gray: #5f5f5f;
 $gray-100: #959595;
-$gray-200: #F8F8F8;
-$gray-400: #D5D5D5;
-$white : #ffffff;
-$black : #000000;
-$black-800 : #191F25;
-$black-700 : #222222;
+$gray-200: #f8f8f8;
+$gray-300: #d9d9d9;
+$gray-400: #d5d5d5;
+$white: #ffffff;
+$black: #000000;
+$black-800: #191f25;
+$black-700: #222222;
+$orange: #ff6348;
 
 $theme-colors: (
   "primary": $primary,
@@ -50,97 +53,224 @@ h4 {
   color: $primary;
 }
 
-// Header Styles
-header {
-  height: 56px;
+.container {
+  margin: 0 auto;
+  @media screen and (min-width: 1600px) {
+    max-width: 1520px;
+  }
 }
-.header-wrapper {
-  background-color: $dark-gray;
-  position: relative;
-  z-index: 999;
-  .navbar-collapse {
-    @media screen and (max-width: 991px) {
-      position: absolute;
-      width: 100%;
-      background-color: $dark-gray;
-      top: 100%;
-      left: 0;
-      border-radius: 0 0 8px 8px;
-      padding: 20px;
-      border-top: 1px solid $gray-100;
-    }
-  }
-  .navbar-nav {
-    gap: 50px;
-    @media screen and (max-width: 991px) {
-      gap: 10px;
-    }
-    .nav-link {
-      color: $white;
-      padding: 0 !important;
-      font-weight: 200;
-      position: relative;
-      font-size: 15px;
-      line-height: 1.6;
-      @media screen and (max-width: 991px) {
-        display: inline-block;
-        line-height: 2;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 1px;
-        width: 0;
-        background-color: rgba($primary, 0.5);
-        transition: all 0.2s ease-in-out;
-      }
-      &:hover {
-        &::after {
-          width: 75%;
-        }
-      }
-    }
-  }
-  .navbar-toggler {
-    margin-left: auto;
-    padding: 0;
-    border: 0;
-    &:focus {
-      box-shadow: none;
+// COMMON CSS
+.btn {
+  padding: 9px 20px;
+  &.btn-primary {
+    border-radius: 24px;
+    border-color: $black-800;
+    background-color: $primary-light;
+    color: $black-700;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    .fa-arrow-right {
+      margin-left: 12px;
+      transform: rotate(-45deg);
+      transition: transform 0.15s ease-in-out;
     }
     &:hover {
-      svg {
-        path {
-          stroke: $primary;
-        }
+      border-color: $primary;
+      background-color: $primary;
+      color: $white;
+      .fa-arrow-right {
+        transform: rotate(0deg);
       }
     }
   }
-  .menu-icon-list {
-    margin-left: 35px;
+}
+
+.lg-heading {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 80px;
+  color: $dark-gray;
+  span {
+    color: $primary;
+  }
+}
+.sm-heading {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+  color: $dark-gray;
+}
+.desc {
+  color: $gray;
+  font-size: 20px;
+  line-height: 36px;
+}
+.form-control {
+  padding: 12px 16px;
+  background-color: $white;
+  border-radius: 24px;
+  border-color: $gray-400;
+  line-height: normal;
+  &::placeholder {
+    color: rgba($gray, 0.5);
+  }
+}
+
+// Header Styles
+header {
+  .header-wrap-main {
+    position: relative;
+    z-index: 999;
     display: flex;
-    align-items: center;
-    @media screen and (max-width: 991px) {
-      margin-left: 15px;
-    }
-    gap: 15px;
-    svg {
-      path {
-        transition: all 0.2s ease-in-out;
+    .header-shape {
+      min-width: 80px;
+      background-color: $orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: 767px) {
+        min-width: 58px;
+        img {
+          max-width: 50%;
+        }
       }
-      &:hover {
-        path {
-          fill: $primary;
+    }
+    .container-wrapper {
+      padding-right: 80px;
+      width: 100%;
+      @media screen and (max-width: 575px) {
+        padding-right: 0;
+      }
+    }
+    .header-wrap {
+      display: flex;
+      padding: 18px 0;
+      align-items: center;
+      @media screen and (max-width: 767px) {
+        padding: 14px 0;
+      }
+      ul {
+        margin-left: 72px;
+        gap: 0 60px;
+        @media screen and (max-width: 1599px) {
+          gap: 30px;
+        }
+        @media screen and (max-width: 1399px) {
+          gap: 20px;
+          margin-left: 30px;
+        }
+        @media screen and (max-width: 1199px) {
+          gap: 18px;
+          margin-left: 0px;
+        }
+        li {
+          a {
+            color: $dark-gray-100;
+            font-weight: 500;
+            padding: 0 !important;
+            position: relative;
+            overflow: hidden;
+            width: fit-content;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: -100%;
+              height: 1px;
+              width: 100%;
+              background-color: $dark-gray-100;
+              border-radius: 2px;
+              transition: all 0.2s ease-in-out;
+            }
+            &:hover {
+              &::after {
+                left: 0;
+              }
+            }
+            @media screen and (max-width: 1399px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .mobile-menu {
+        li {
+          margin-top: 18px;
+        }
+      }
+      .desktop-menu {
+        ul {
+          gap: 20px;
+          @media screen and (max-width: 1199px) {
+            gap: 12px;
+          }
+        }
+      }
+      .navbar {
+        position: static;
+      }
+      .navbar-collapse {
+        @media screen and (max-width: 1199px) {
+          position: absolute;
+          width: 100%;
+          background-color: $white;
+          top: 100%;
+          left: 0;
+          border-radius: 0 0 8px 8px;
+          padding: 20px;
+          border-top: 1px solid $gray-300;
+          box-shadow: 0 10px 50px rgba($black, 0.05);
+        }
+      }
+      .navbar-toggler {
+        margin-left: auto;
+        padding: 0;
+        border: 0;
+        &:focus {
+          box-shadow: none;
+        }
+        &:hover {
+          svg {
+            path {
+              stroke: $primary;
+            }
+          }
+        }
+      }
+      .btn-primary {
+        min-width: fit-content;
+        @media screen and (max-width: 1399px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 767px) {
+          margin-top: 18px;
         }
       }
     }
   }
 }
 
-
+// HERO SECTION CSS
+.hero-section {
+  .desc,
+  .btn {
+    margin-top: 20px;
+  }
+  .details {
+    label {
+      color: $gray;
+      font-size: 14px;
+    }
+    p {
+      color: $gray;
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 40px;
+      margin-top: 12px;
+    }
+  }
+}
 
 /* Footer Style */
 footer {
@@ -242,88 +372,4 @@ footer {
       }
     }
   }
-}
-// COMMON CSS
-.btn{
-  padding: 9px 20px;
-  &.btn-primary{
-    border-radius: 24px;
-    border-color: $black-800;
-    background-color: $primary-light;
-    color: $black-700;
-    display: inline-flex;
-    align-items: center;
-    .fa-arrow-right{
-      margin-left: 12px;
-      transform: rotate(-45deg);
-      transition: transform 0.15s ease-in-out;
-    }
-    &:hover{
-      border-color: $primary;
-      background-color: $primary;
-      color: $white;
-      .fa-arrow-right{
-        transform: rotate(0deg);
-      }
-    }
-  }
-}
-
-.lg-heading{
-  font-size: 60px;
-  font-weight: 800;
-  line-height: 80px;
-  color: $dark-gray;
-  span{
-    color: $primary;
-  }
-}
-.sm-heading{
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 40px;
-  color: $dark-gray;
-}
-
-.desc{
-  color: $gray;
-  font-size: 20px;
-  line-height: 36px;
-}
-
-.form-control{
-  padding: 12px 16px;
-  background-color: $white;
-  border-radius: 24px;
-  border-color: $gray-400;
-  line-height: normal;
-  &::placeholder{
-    color: rgba($gray, 0.5);
-  }
-}
-
-// HERO SECTION CSS
-.hero-section{
-  .desc, .btn{
-    margin-top: 20px;
-  }
-  .details{
-    label{
-      color: $gray;
-      font-size: 14px; 
-    }
-    p{
-      color: $gray;
-      font-size: 14px; 
-      line-height: 24px;
-      margin-bottom: 40px;
-      margin-top: 12px;
-    }
-  }
-}
-
-// CONTAINER CUSTOMIZATION 
-
-.container{
-  max-width: 1520px;
 }
