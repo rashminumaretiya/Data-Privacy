@@ -86,12 +86,24 @@ h4 {
   }
 }
 
-.lg-heading {
+.lg-heading{
   font-size: 60px;
   font-weight: 800;
   line-height: 80px;
   color: $dark-gray;
-  span {
+  @media screen and (max-width:1440px) {
+    font-size: 45px;
+    line-height: 60px;
+  }
+  @media screen and (max-width:575px) {
+    font-size: 37px;
+    line-height: 50px;
+  }
+  @media screen and (max-width:425px) {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  span{
     color: $primary;
   }
 }
@@ -372,4 +384,161 @@ footer {
       }
     }
   }
+}
+// COMMON CSS
+.btn{
+  padding: 9px 20px;
+  &.btn-primary{
+    border-radius: 24px;
+    border-color: $black-800;
+    background-color: $primary-light;
+    color: $black-700;
+    display: inline-flex;
+    align-items: center;
+    .fa-arrow-right{
+      margin-left: 12px;
+      transform: rotate(-45deg);
+      transition: transform 0.15s ease-in-out;
+    }
+    &:hover{
+      border-color: $primary;
+      background-color: $primary;
+      color: $white;
+      .fa-arrow-right{
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+.form-control{
+  padding: 12px 16px;
+  background-color: $white;
+  border-radius: 24px;
+  border-color: $gray-400;
+  line-height: normal;
+  &::placeholder{
+    color: rgba($gray, 0.5);
+  }
+}
+
+// HERO SECTION CSS
+.hero-section{
+  padding: 160px 0 50px;
+  background-color: $gray-200;
+  display: flex;
+  align-items: center;
+  .desc, .btn{
+    margin-top: 20px;
+    @media screen and (max-width: 475px) {
+      margin-top: 12px;
+    }
+  }
+  .star-outline{
+    position: absolute;
+    top: 29%;
+    right: -9%;
+    @media screen and (max-width: 991px) {
+      right: 12px;
+      top: -37px;
+    }
+    @media screen and (max-width: 767px) {
+     display: none;
+    }
+  }
+  .details{
+    label{
+      color: $gray;
+      font-size: 14px; 
+    }
+    .form-control{
+      @media screen and (max-width: 991px) {
+        max-width: 520px;
+      }
+    }
+    p{
+      color: $gray;
+      font-size: 14px; 
+      line-height: 24px;
+      margin-bottom: 40px;
+      margin-top: 12px;
+      @media screen and (max-width: 575px) {
+        margin-bottom: 16px;
+      }
+    }
+    .sm-heading{
+      display: inline-block;
+      img{
+        position: absolute;
+        top: -14px;
+        right: -20px;
+        height: 18px;
+        width: auto;
+        @media screen and (max-width: 475px) {
+          display: none;
+        }
+      }
+    }
+    .btn-primary{
+      img{
+        position: absolute;
+        top: -10px;
+        right: -46px;
+      }
+    }
+  }
+}
+
+// SLIDER SECTION CSS
+.slider-section{
+  padding: 50px 0;
+  &.home-slider{
+    background-color: $gray-200;
+  }
+  .company-slider{
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 250px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90.05deg, $gray-200  1.13%, transparent  101.26%);
+      z-index: 2;
+      @media screen and (max-width:767px) {
+        width: 80px;
+      }
+      @media screen and (max-width:425px) {
+        width: 20px;
+      }
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      width: 250px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(90.05deg, transparent 1.13%, $gray-200  101.26%);
+      z-index: 2;
+      @media screen and (max-width:767px) {
+        width: 80px;
+      }
+      @media screen and (max-width:425px) {
+        width: 20px;
+      }
+    }
+    .item{
+      img{
+        max-width: 188px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+// CONTAINER CUSTOMIZATION 
+
+.container{
+  max-width: 1520px;
 }

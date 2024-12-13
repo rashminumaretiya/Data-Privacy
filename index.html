@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 
@@ -88,8 +89,9 @@
 
     <div class="hero-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row justify-content-between">
+                <div class="col-lg-5 position-relative mb-lg-0 mb-4">
+                    <img src="/assets/svg/star-outline.svg" alt="" class="star-outline">
                     <h1 class="lg-heading">Collect User Consent <span>Effortlessly</span></h1>
                     <p class="desc">Modern Consent Management Platform to intelligently manage 3rd party services &
                         record user consent. Seamlessly comply with GDPR , CCPA , TCF 2.2, Google Consent Mode and other
@@ -98,17 +100,36 @@
                         <span>Get A Demo</span> <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div class="details">
                         <label for="" class="mb-1">Work email</label>
                         <input type="text" name="" placeholder="Enter Username or Email" class="form-control">
                         <p>Find teammates, plus keep work and life separate by using your work email.</p>
-                        <h4 class="sm-heading">Already have an account?</h4>
-                        <button type="button" class="btn btn-primary">
-                            <span>Login Here</span> <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        <h4 class="sm-heading position-relative">Already have an account?<img src="/assets/images/svg/green-star.svg" alt=""></h4>
+                        <div>
+                            <button type="button" class="btn btn-primary position-relative">
+                                <img src="/assets/images/svg/green-star.svg" alt="">
+                                <span>Login Here</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-slider slider-section">
+        <div class="container">
+            <div class="owl-carousel owl-theme company-slider">
+                <div class="item">
+                    <img src="/assets/images/webflow-logo.png" alt="">
+                </div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
+                <div class="item"><img src="/assets/images/webflow-logo.png" alt=""></div>
             </div>
         </div>
     </div>
@@ -221,6 +242,7 @@
     </footer>
 
     <script src="/js/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
 </body>
