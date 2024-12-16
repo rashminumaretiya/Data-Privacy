@@ -7,7 +7,6 @@ $(window).scroll(function () {
   }
 });
 
-
 $(".company-slider, .trusted-company").owlCarousel({
   loop: true,
   margin: 10,
@@ -52,16 +51,38 @@ $(".testimonial-slider").owlCarousel({
   },
 });
 
+const accordionButtons = document.querySelectorAll(".accordion-button");
+const dynamicImage = document.getElementById("dynamicImage");
 
-const accordionButtons = document.querySelectorAll('.accordion-button');
-    const dynamicImage = document.getElementById('dynamicImage');
+// Add click event listeners to each button
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Get the image URL from the data attribute
+    const imageUrl = button.getAttribute("data-image");
+    // Update the dynamic image
+    dynamicImage.src = imageUrl;
+  });
+});
 
-    // Add click event listeners to each button
-    accordionButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Get the image URL from the data attribute
-        const imageUrl = button.getAttribute('data-image');
-        // Update the dynamic image
-        dynamicImage.src = imageUrl;
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.getElementsByTagName("header");
+  const scrollLinks = document.querySelectorAll(".scroll-link");  
+
+  scrollLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const headerHeight = header?.[0].clientHeight;
+        const targetPosition = targetElement.offsetTop - headerHeight - 50;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
     });
+  });
+});

@@ -7,12 +7,13 @@
 $primary: #00b894;
 $primary-light: #e8fffa;
 $primary-light-100: #cef5ec;
-$primary-light-200: #EEFFFC;
+$primary-light-200: #eefffc;
+$primary-light-300: #f6fffd;
 $dark-gray: #101c34;
 $dark-gray-100: #222222;
 $dark-gray-200: #525455;
 $dark-gray-300: #898989;
-$dark-gray-400: #292D32;
+$dark-gray-400: #292d32;
 $gray: #5f5f5f;
 $gray-100: #959595;
 $gray-200: #f8f8f8;
@@ -21,8 +22,9 @@ $gray-400: #d5d5d5;
 $gray-500: #e6e6e6;
 $gray-600: #a0a0a0;
 $gray-700: #575757;
-$gray-800: #B7B7B7;
-$gray-900: #8E8E8E;
+$gray-800: #b7b7b7;
+$gray-900: #8e8e8e;
+$light-gray: #f7f7f7;
 $white: #ffffff;
 $black: #000000;
 $black-800: #191f25;
@@ -79,7 +81,9 @@ h4 {
 .text_primary {
   color: $primary !important;
 }
-input, .form-control, .form-select {
+input,
+.form-control,
+.form-select {
   &:focus {
     outline: none;
     box-shadow: none;
@@ -123,7 +127,7 @@ input, .form-control, .form-select {
     }
   }
 }
-.flex-none{
+.flex-none {
   flex: none !important;
 }
 .lg-heading {
@@ -164,11 +168,12 @@ input, .form-control, .form-select {
   font-weight: 600;
   line-height: 1.33;
   color: $dark-gray;
-  @media screen and  (max-width: 575px) {
+  @media screen and (max-width: 575px) {
     font-size: 22px;
   }
 }
-.form-control, .form-select {
+.form-control,
+.form-select {
   padding: 12px 16px;
   background-color: $white;
   border-radius: 24px;
@@ -231,7 +236,7 @@ textarea {
   display: inline-block;
   width: 50px;
   height: 30px;
-  input { 
+  input {
     opacity: 0;
     width: 0;
     height: 0;
@@ -252,8 +257,8 @@ textarea {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 34px;
     &:before {
       position: absolute;
@@ -263,8 +268,8 @@ textarea {
       left: 2px;
       bottom: 2px;
       background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
       border-radius: 34px;
     }
   }
@@ -278,7 +283,6 @@ textarea {
     padding: 50px 0;
   }
 }
-
 
 // Header Styles
 header {
@@ -540,18 +544,18 @@ header {
       }
     }
   }
-  &.scan-website{
-    background-image: url('../assets/images/bg-rotate.png');
+  &.scan-website {
+    background-image: url("../assets/images/bg-rotate.png");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
-    .green-group{
+    .green-group {
       position: absolute;
       top: 60%;
       transform: translateY(-50%);
       left: 10%;
     }
-    .outline-group{
+    .outline-group {
       position: absolute;
       top: 78%;
       transform: translateY(-50%);
@@ -784,7 +788,7 @@ footer {
 }
 
 // HERO SECTION CSS
-.hero-section{
+.hero-section {
   padding: 80px 0 50px;
   background-color: $gray-200;
   display: flex;
@@ -813,11 +817,11 @@ footer {
       display: none;
     }
   }
-  .details{
+  .details {
     @media screen and (min-width: 992px) {
       padding-left: 40px;
     }
-    label{
+    label {
       color: $gray;
       font-size: 14px;
     }
@@ -857,14 +861,14 @@ footer {
       }
     }
   }
-  &.scan-website{
+  &.scan-website {
     padding: 100px 0;
     @media screen and (max-width: 767px) {
       padding: 50px 0;
     }
-    ul{
+    ul {
       padding: 24px 0 32px;
-      li{
+      li {
         color: $primary;
         font-size: 20px;
         font-weight: 500;
@@ -875,7 +879,7 @@ footer {
         @media screen and (max-width: 575px) {
           font-size: 16px;
         }
-        [class*="fa-"]{
+        [class*="fa-"] {
           border: 2px solid $primary;
           border-radius: 100%;
           height: 20px;
@@ -886,45 +890,45 @@ footer {
           align-items: center;
           justify-content: center;
         }
-        span{
+        span {
           display: inline-block;
           margin-left: 12px;
         }
       }
     }
-    .star-outline{
+    .star-outline {
       position: absolute;
       top: 6%;
       right: 3%;
-      @media screen and (max-width:1199px) {
+      @media screen and (max-width: 1199px) {
         top: 17%;
         right: 0;
       }
-      @media screen and (max-width:991px) {
+      @media screen and (max-width: 991px) {
         top: -20%;
         right: unset;
       }
     }
-    .cookie-wrapper{
+    .cookie-wrapper {
       position: relative;
-      @media screen and (max-width:475px) {
+      @media screen and (max-width: 475px) {
         flex-direction: column;
       }
-      .btn{
+      .btn {
         flex: none;
         margin-left: 16px;
-        @media screen and (max-width:475px) {
+        @media screen and (max-width: 475px) {
           margin-top: 10px;
           margin-left: 0;
         }
       }
-      .stars-wrap{
+      .stars-wrap {
         position: absolute;
         top: -42px;
         left: calc(100% + 12px);
         display: inline-block;
         width: fit-content;
-        @media screen and (max-width:991px) {
+        @media screen and (max-width: 991px) {
           top: -60px;
           left: calc(100% - 55px);
         }
@@ -933,31 +937,31 @@ footer {
   }
 }
 
-.scan-card{
+.scan-card {
   padding: 30px;
   background-color: $white;
   border-radius: 12px;
   position: relative;
-  @media screen and (max-width:475px) {
+  @media screen and (max-width: 475px) {
     padding: 16px;
   }
-  .form-select{
+  .form-select {
     background-color: $gray-200;
     color: $gray;
     margin: 0 20px;
-    @media screen and (max-width:475px) {
+    @media screen and (max-width: 475px) {
       margin: 0 4px;
     }
-    @media screen and (max-width:375px) {
+    @media screen and (max-width: 375px) {
       margin: 0 12px 0 0;
     }
   }
-  .form-select{
-    @media screen and (max-width:475px) {
+  .form-select {
+    @media screen and (max-width: 475px) {
       padding: 9px 16px;
     }
   }
-  .logo-out{
+  .logo-out {
     background-color: $primary;
     display: flex;
     align-items: center;
@@ -965,31 +969,31 @@ footer {
     height: 50px;
     width: 50px;
     border-radius: 100%;
-    @media screen and (max-width:475px) {
+    @media screen and (max-width: 475px) {
       height: 40px;
       width: 40px;
     }
-    @media screen and (max-width:375px) {
+    @media screen and (max-width: 375px) {
       display: none;
     }
   }
-  .user-avatar{
-    @media screen and (max-width:475px) {
+  .user-avatar {
+    @media screen and (max-width: 475px) {
       height: 40px;
       width: 40px;
     }
   }
-  p{
+  p {
     color: $gray-800;
   }
-  .top-left{
+  .top-left {
     position: absolute;
     top: 40%;
     left: 15%;
     height: 30px;
     width: auto;
   }
-  .bottom-right{
+  .bottom-right {
     position: absolute;
     bottom: 10%;
     right: 8%;
@@ -1039,7 +1043,7 @@ footer {
       padding: 0;
       margin-bottom: 40px;
     }
-    .star1{
+    .star1 {
       position: absolute;
       top: 10%;
       right: 10%;
@@ -1051,7 +1055,7 @@ footer {
         width: 28px;
       }
     }
-    .star2{
+    .star2 {
       position: absolute;
       bottom: 16%;
       right: 30%;
@@ -1066,7 +1070,7 @@ footer {
         width: 18px;
       }
     }
-    .ring2{
+    .ring2 {
       position: absolute;
       bottom: 10%;
       right: 35%;
@@ -1321,7 +1325,7 @@ footer {
         @media screen and (max-width: 767px) {
           right: 5%;
         }
-        @media screen and (max-width:640px) {
+        @media screen and (max-width: 640px) {
           top: 30%;
         }
       }
@@ -1493,7 +1497,7 @@ footer {
         background-color: #00b894;
         border-radius: 100%;
         color: #ffffff;
-        border: 1px solid #292D32;
+        border: 1px solid #292d32;
         width: 20px;
         height: 20px;
         text-align: center;
@@ -1508,74 +1512,74 @@ footer {
 }
 
 // STEP CARD CSS
-.step-card-wrapper{
+.step-card-wrapper {
   display: flex;
   margin-top: 60px;
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
   }
-  @media screen and (max-width:575px) {
+  @media screen and (max-width: 575px) {
     margin-top: 40px;
   }
-  .step-card{
+  .step-card {
     flex: 1;
     text-align: center;
     padding: 0 16px;
     position: relative;
     display: flex;
     flex-direction: column;
-    @media screen and (max-width:767px) {
-      &:not(:last-child){
+    @media screen and (max-width: 767px) {
+      &:not(:last-child) {
         margin-bottom: 80px;
       }
     }
-    &::before{
+    &::before {
       position: absolute;
-      content: '';
+      content: "";
       top: 32px;
       width: calc(100% - 124px);
       left: calc(50% + 62px);
       height: 2px;
       background-color: $gray-300;
-      @media screen and  (max-width: 991px) {
-      width: calc(100% - 80px);
-      left: calc(50% + 40px);
-      top: 20px;
+      @media screen and (max-width: 991px) {
+        width: calc(100% - 80px);
+        left: calc(50% + 40px);
+        top: 20px;
       }
-      @media screen and (max-width:767px) {
+      @media screen and (max-width: 767px) {
         height: calc(100% - 70px);
         width: 2px;
         top: calc(100% + 10px);
         left: 50%;
       }
     }
-    &:last-child{
-      &::before{
+    &:last-child {
+      &::before {
         display: none;
       }
     }
-    .img-out{
+    .img-out {
       height: 62px;
       width: 62px;
-      @media screen and  (max-width: 991px) {
+      @media screen and (max-width: 991px) {
         height: 40px;
         width: 40px;
       }
     }
-    p{
+    p {
       font-size: 28px;
       line-height: 38px;
-      margin:18px 0 23px;
+      margin: 18px 0 23px;
       color: $dark-gray;
-      @media screen and  (max-width: 991px) {
+      @media screen and (max-width: 991px) {
         font-size: 18px;
         line-height: 28px;
       }
-      @media screen and  (max-width: 767px) {
+      @media screen and (max-width: 767px) {
         margin: 14px 0;
       }
     }
-    .number{
+    .number {
       height: 46px;
       width: 46px;
       background-color: $primary;
@@ -1597,52 +1601,386 @@ footer {
 
 // accordion-section CSS
 
-.accordion-section{
-  .accordion-wrapper{
+.accordion-section {
+  .accordion-wrapper {
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
-    .accordion-item{
+    .accordion-item {
       margin-bottom: 30px;
       border-radius: 8px;
       overflow: hidden;
       border: none;
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
     }
-    .accordion-button{
+    .accordion-button {
       background-color: $gray-200;
       box-shadow: none;
       font-size: 20px;
       color: $dark-gray;
       padding: 30px;
       transition: all 0.3s ease-in-out;
-      @media screen and (max-width:575px) {
+      @media screen and (max-width: 575px) {
         padding: 16px;
         font-size: 18px;
       }
-      &:not(.collapsed){
+      &:not(.collapsed) {
         background-color: $gray-200;
         padding: 30px 30px 0 30px;
-        @media screen and (max-width:575px) {
+        @media screen and (max-width: 575px) {
           padding: 16px 16px 0 16px;
         }
       }
     }
-    .accordion-body{
+    .accordion-body {
       background-color: $gray-200;
       padding: 16px 30px 30px 30px;
       text-align: start;
-      @media screen and (max-width:575px) {
+      @media screen and (max-width: 575px) {
         padding: 16px;
       }
     }
   }
 }
-.how-it-works{
+
+.how-it-works {
   padding-bottom: 150px;
   @media screen and (max-width: 767px) {
     padding-bottom: 20px;
+  }
+}
+
+// Regulation page
+.regulation-section {
+  padding-top: 80px;
+  .lg-heading {
+    @media screen and (max-width: 991px) {
+      font-size: 42px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 38px;
+    }
+    @media screen and (max-width: 575px) {
+      font-size: 30px;
+    }
+  }
+  .sticky-wrapper {
+    position: sticky;
+    top: 120px;
+    .box-1 {
+      background-color: $gray-200;
+      padding: 40px 30px 30px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      @media screen and (max-width: 1199px) {
+        padding: 30px 20px;
+      }
+      .head {
+        margin-bottom: 30px;
+        font-weight: 700;
+        color: $dark-gray;
+        font-size: 20px;
+      }
+      ul {
+        list-style: disc;
+        padding-left: 25px;
+        li {
+          margin-bottom: 24px;
+          a {
+            color: $dark-gray;
+            line-height: 1.63;
+            text-decoration: none;
+            display: inline-block;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .box-2 {
+      background-color: $gray-200;
+      padding: 40px 30px 30px;
+      border-radius: 8px;
+      @media screen and (max-width: 1199px) {
+        padding: 20px;
+      }
+      .sm-heading {
+        margin-top: 20px;
+        margin-bottom: 12px;
+      }
+      .scan-card {
+        .logo-out {
+          height: 34px;
+          width: 34px;
+          img {
+            max-width: 18px;
+          }
+        }
+        .form-select {
+          margin: 0 12px;
+          padding: 8px 12px;
+          font-size: 12px;
+          & ~ img {
+            max-width: 34px;
+          }
+        }
+        .text-center {
+          img {
+            max-width: 98px;
+            margin-top: 34px;
+          }
+          h4 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+        .top-left {
+          max-width: 20px;
+        }
+      }
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .regulation-content-main {
+    margin-left: 110px;
+    @media screen and (max-width: 1399px) {
+      margin-left: 75px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-left: 0px;
+    }
+    .heading {
+      position: relative;
+      display: inline-block;
+      h2 {
+        max-width: 716px;
+        margin-bottom: 18px;
+      }
+      img {
+        position: absolute;
+        top: 18px;
+        right: 0px;
+        width: 100%;
+        max-width: 48px;
+        @media screen and (max-width: 991px) {
+          max-width: 30px;
+          top: -20px;
+        }
+      }
+    }
+    .author-line {
+      display: flex;
+      align-items: center;
+      gap: 2px 16px;
+      position: relative;
+      width: fit-content;
+      flex-wrap: wrap;
+      @media screen and (max-width: 575px) {
+        width: 90%;
+      }
+      p {
+        color: $gray;
+      }
+      img {
+        position: absolute;
+        top: -45px;
+        right: -100px;
+        @media screen and (max-width: 1440px) {
+          top: -25px;
+          right: -70px;
+        }
+        @media screen and (max-width: 575px) {
+          max-width: 30px;
+          right: -35px;
+          bottom: 0;
+          top: unset;
+        }
+      }
+    }
+    .head-btn {
+      margin: 30px 0 20px;
+    }
+    .content-wrapper {
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        color: $gray;
+        margin: 20px 0;
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
+        }
+        a {
+          color: $gray;
+        }
+      }
+      h4 {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.5;
+        margin: 30px 0 20px;
+        @media screen and (max-width: 767px) {
+          font-size: 20px;
+        }
+      }
+      ul {
+        list-style: disc;
+        padding: 0 62px 0 48px;
+        margin-top: 30px;
+        @media screen and (max-width: 767px) {
+          padding: 0 20px 0 30px;
+        }
+        li {
+          font-size: 20px;
+          line-height: 1.6;
+          margin-bottom: 35px;
+          color: $gray;
+          @media screen and (max-width: 1199px) {
+            font-size: 18px;
+          }
+          @media screen and (max-width: 767px) {
+            font-size: 16px;
+            margin-bottom: 25px;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          &::marker {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .bg-primary-light {
+      background-color: $primary-light-300;
+      border-radius: 12px;
+      padding: 23px 70px 23px 40px;
+      @media screen and (max-width: 767px) {
+        padding: 20px;
+      }
+      &.list {
+        padding: 30px 62px 30px 48px;
+        @media screen and (max-width: 767px) {
+          padding: 20px 20px 20px 30px;
+        }
+        ul {
+          padding: 0;
+          margin-top: 0;
+        }
+      }
+      p {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 500;
+        @media screen and (max-width: 1199px) {
+          font-size: 18px;
+        }
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+        }
+        a {
+          color: $gray;
+        }
+      }
+      a.list {
+        color: $primary;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+    .sm-heading {
+      margin: 40px 0 20px;
+      font-weight: 800;
+    }
+    .ckeck-cookie-box {
+      padding: 47px 30px 30px;
+      background-color: $light-gray;
+      border-radius: 12px;
+      margin: 40px 0;
+      @media screen and (max-width: 767px) {
+        padding: 30px;
+      }
+      @media screen and (max-width: 575px) {
+        padding: 20px;
+      }
+      h4 {
+        margin: 0;
+      }
+      .step-card-wrapper {
+        margin-top: 40px;
+
+        .img-out {
+          max-width: 35px;
+          height: 35px;
+        }
+        p {
+          font-size: 18px;
+          line-height: 1.4;
+          margin: 15px 0;
+        }
+        .step-card {
+          padding: 0;
+          @media screen and (max-width: 767px) {
+            margin-bottom: 50px;
+          }
+          &::before {
+            top: 15px;
+            @media screen and (max-width: 767px) {
+              top: 128px;
+              height: calc(100% - 85px);
+            }
+          }
+        }
+        .number {
+          width: 30px;
+          height: 30px;
+          font-size: 13px;
+          margin: 0;
+        }
+      }
+    }
+    .url-box {
+      background-color: $white;
+      padding: 32px;
+      border-radius: 8px;
+      margin-top: 36px;
+      @media screen and (max-width: 767px) {
+        padding: 24px;
+      }
+      @media screen and (max-width: 575px) {
+        padding: 16px;
+      }
+      p {
+        margin: 0;
+        margin-bottom: 30px;
+      }
+      h4 {
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .input-main {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 660px;
+        @media screen and (max-width: 767px) {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .btn-primary {
+          white-space: nowrap;
+        }
+      }
+    }
   }
 }
