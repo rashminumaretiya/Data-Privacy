@@ -896,34 +896,44 @@ footer {
         width: fit-content;
       }
     }
-    .scan-card{
-      padding: 30px;
-      background-color: $white;
-      border-radius: 12px;
-      position: relative;
-      .form-select{
-        background-color: $gray-200;
-        color: $gray;
-        margin: 0 20px;
-      }
-      p{
-        color: $gray-800;
-      }
-      .top-left{
-        position: absolute;
-        top: 40%;
-        left: 15%;
-        height: 30px;
-        width: auto;
-      }
-      .bottom-right{
-        position: absolute;
-        bottom: 10%;
-        right: 8%;
-        height: 30px;
-        width: auto;
-      }
-    }
+  }
+}
+
+.scan-card{
+  padding: 30px;
+  background-color: $white;
+  border-radius: 12px;
+  position: relative;
+  .form-select{
+    background-color: $gray-200;
+    color: $gray;
+    margin: 0 20px;
+  }
+  .logo-out{
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+  }
+  p{
+    color: $gray-800;
+  }
+  .top-left{
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    height: 30px;
+    width: auto;
+  }
+  .bottom-right{
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    height: 30px;
+    width: auto;
   }
 }
 
