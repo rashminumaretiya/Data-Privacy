@@ -59,7 +59,21 @@ $(".partner-slider").owlCarousel({
   autoplay: true,
   autoplaySpeed: 2000,
   autoplayTimeout: 5000,
-  autoplayHoverPause: true
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      stagePadding: 20,
+    },
+    475: {
+      stagePadding: 60,
+    },
+    991: {
+       stagePadding: 200,
+    },
+    1400: {
+      stagePadding: 400,
+    },
+  },
 });
 
 const accordionButtons = document.querySelectorAll(".accordion-button");
