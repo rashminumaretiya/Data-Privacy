@@ -7,40 +7,83 @@ $(window).scroll(function () {
   }
 });
 
-$(".company-slider, .trusted-company").owlCarousel({
-  loop: true,
-  margin: 10,
-  nav: false,
-  dots: false,
-  responsive: {
-    0: {
-      items: 1.5,
+$(".company-slider, .trusted-company").slick({
+  speed: 5000,
+  autoplay: true,
+  autoplaySpeed: 0,
+  cssEase: 'linear',
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  infinite: true,
+  initialSlide: 1,
+  arrows: false,
+  buttons: false,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.5,
+      }
     },
-    425: {
-      items: 2,
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
     },
-    600: {
-      items: 2.5,
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      }
     },
-    767: {
-      items: 3,
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
     },
-    991: {
-      items: 4.5,
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 4,
+      }
     },
-    1200: {
-      items: 5,
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 5,
+      }
     },
-    1400: {
-      items: 6,
-    },
-  },
+  ]
 });
+
+$('.main-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  asNavFor: '.thumb-slider' // Sync with thumb slider
+});
+
+// Thumbnail slider
+$('.thumb-slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: '.main-slider', // Sync with main slider
+  dots: false,
+  focusOnSelect: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
+});
+
 $(".testimonial-slider").owlCarousel({
   loop: true,
   margin: 0,
   nav: false,
   dots: false,
+  autoplay: true,
+  autoplaySpeed: 3000,
   responsive: {
     0: {
       items: 1,
@@ -76,67 +119,113 @@ $(".partner-slider").owlCarousel({
   },
 });
 
-const accordionButtons = document.querySelectorAll(".accordion-button");
-const dynamicImage = document.getElementById("dynamicImage");
-
-// Add click event listeners to each button
-accordionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    // Get the image URL from the data attribute
-    const imageUrl = button.getAttribute("data-image");
-    // Update the dynamic image
-    dynamicImage.src = imageUrl;
-  });
-});
-
+// Smooth scrolling functionality
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementsByTagName("header");
   const scrollLinks = document.querySelectorAll(".scroll-link");  
 
   scrollLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
+      link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
 
-      if (targetElement) {
-        const headerHeight = header?.[0].clientHeight;
-        const targetPosition = targetElement.offsetTop - headerHeight - 50;
+          if (targetElement) {
+              const headerHeight = header?.[0].clientHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight - 50;
 
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-      }
-    });
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+              });
+          }
+      });
   });
 });
 
-const countrySelect = document.getElementById("countrySelect");
-  const phoneCodeInput = document.getElementById("phoneCode");
+// Smooth scrolling functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.getElementsByTagName("header");
+  const scrollLinks = document.querySelectorAll(".scroll-link");  
 
-  // Fetch country data from intl-tel-input library
-  const countries = window.intlTelInputGlobals.getCountryData();
+  scrollLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
 
-  // Populate <select> with country options
-  function populateCountryOptions() {
-    countries.forEach((country) => {
-      const option = document.createElement("option");
-      option.value = `+${country.dialCode}`;
-      option.textContent = `${country.name}`;
-      countrySelect.appendChild(option);
-    });
-    
-    // Set initial selected value
-    countrySelect.value = "+91";
-    updateCountryCode();
-  }
+          if (targetElement) {
+              const headerHeight = header?.[0].clientHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight - 50;
 
-  // Update phoneCode input when country changes
-  function updateCountryCode() {
-    phoneCodeInput.textContent = countrySelect.value;
-    console.log(phoneCodeInput.value);
-  }
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+              });
+          }
+      });
+  });
+});
 
-  // Call function to populate dropdown
-  populateCountryOptions();
+const accordionButtons = document.querySelectorAll(".accordion-button");
+const dynamicImage = document.getElementById("dynamicImage");
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+// Store the image URLs in an array
+const imageUrls = Array.from(accordionButtons).map(button => button.getAttribute("data-image"));
+
+// Set the initial index
+let currentIndex = 0;
+let autoplayInterval;
+
+// Function to expand the accordion, update classes, and add an active class to the item
+function expandAccordion(index) {
+  accordionItems.forEach((item, i) => {
+    const content = item.querySelector(".accordion-collapse");
+    const button = accordionButtons[i];
+
+    if (i === index) {
+      content.classList.add("show");
+      button.classList.remove("collapsed");
+      item.classList.add("active-item"); // Add active-item class to the active accordion-item
+    } else {
+      content.classList.remove("show");
+      button.classList.add("collapsed");
+      item.classList.remove("active-item"); // Remove active-item class from inactive accordion-items
+    }
+  });
+
+  // Update the image for the active accordion
+  dynamicImage.src = imageUrls[index];
+
+  // Update the current index
+  currentIndex = index;
+}
+
+// Add click event listeners to each button
+accordionButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    // Expand the clicked accordion and reset autoplay
+    expandAccordion(index);
+    resetAutoplay(index);
+  });
+});
+
+// Autoplay function to change the active accordion every 5 seconds
+function autoplay() {
+  const nextIndex = (currentIndex + 1) % accordionButtons.length; // Get the next index
+  expandAccordion(nextIndex); // Expand the next accordion
+}
+
+// Reset autoplay to restart the interval from the clicked accordion
+function resetAutoplay(index) {
+  clearInterval(autoplayInterval); // Clear the current autoplay interval
+  expandAccordion(index); // Immediately set the clicked accordion as active
+  autoplayInterval = setInterval(autoplay, 10000); // Restart autoplay every 5 seconds
+}
+
+// Set the autoplay interval on page load
+document.addEventListener("DOMContentLoaded", () => {
+  expandAccordion(0); // Set the first accordion as active by default
+  autoplayInterval = setInterval(autoplay, 10000); // Start autoplay every 5 seconds
+});

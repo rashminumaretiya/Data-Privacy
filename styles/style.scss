@@ -25,11 +25,11 @@ $gray-700: #575757;
 $gray-800: #b7b7b7;
 $gray-900: #8e8e8e;
 $light-gray: #f7f7f7;
-$light-gray-100: #ECECEC;
-$light-gray-200: #F8F8F8;
-$light-gray-300: #E1E1E1;
-$light-gray-400: #5E5E5E;
-$light-gray-500: #D8D8D8;
+$light-gray-100: #ececec;
+$light-gray-200: #f8f8f8;
+$light-gray-300: #e1e1e1;
+$light-gray-400: #5e5e5e;
+$light-gray-500: #d8d8d8;
 $white: #ffffff;
 $black: #000000;
 $black-800: #191f25;
@@ -44,6 +44,7 @@ $theme-colors: (
 
 body {
   font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
   @media screen and (max-width: 767px) {
     font-size: 14px;
   }
@@ -222,34 +223,40 @@ textarea {
     }
   }
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .section {
   padding: 75px 0;
   @media screen and (max-width: 991px) {
     padding: 50px 0;
   }
   @media screen and (max-width: 767px) {
-    padding: 30px 0;
+    padding: 40px 0;
   }
 }
-.text-primary{
+.text-primary {
   color: $primary !important;
 }
 .pt-100 {
   padding-top: 100px;
   @media screen and (max-width: 991px) {
-    padding-top: 80px;
+    padding-top: 75px;
   }
   @media screen and (max-width: 767px) {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 .pb-100 {
   padding-bottom: 100px;
   @media screen and (max-width: 991px) {
-    padding-bottom: 80px;
+    padding-bottom: 75px;
   }
   @media screen and (max-width: 767px) {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 }
 .pt-150 {
@@ -258,7 +265,7 @@ textarea {
     padding-top: 75px;
   }
   @media screen and (max-width: 767px) {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 .pb-150 {
@@ -267,7 +274,7 @@ textarea {
     padding-bottom: 75px;
   }
   @media screen and (max-width: 767px) {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 }
 
@@ -511,8 +518,7 @@ header {
         left: 8%;
       }
       @media screen and (max-width: 575px) {
-        top: 5%;
-        left: 3%;
+        display: none;
       }
     }
     .star-outline2 {
@@ -614,6 +620,10 @@ header {
     background-color: $primary;
     padding: 50px 120px;
     border-radius: 30px;
+    text-align: center;
+    > .row{
+      justify-content: center;
+    }
     @media screen and (max-width: 1199px) {
       padding: 50px 100px;
     }
@@ -633,10 +643,6 @@ header {
       font-size: 40px;
       color: $white;
       line-height: 1.5;
-      max-width: 400px;
-      @media screen and (max-width: 1199px) {
-        max-width: none;
-      }
       @media screen and (max-width: 991px) {
         font-size: 30px;
       }
@@ -661,6 +667,9 @@ footer {
   padding-top: 300px;
   position: relative;
   z-index: 1;
+  @media screen and (max-width: 991px) {
+    padding-top: 250px;
+  }
   .top-footer {
     padding-bottom: 40px;
     border-bottom: 1px solid $gray-300;
@@ -673,16 +682,23 @@ footer {
     }
     .footer-ring {
       position: absolute;
-      right: 40%;
+      right: 23%;
       top: -5px;
+      @media screen and (max-width: 1599px) {
+        right: 16%;
+      }
       @media screen and (max-width: 1399px) {
-        right: 36%;
+        right: 7%;
       }
       @media screen and (max-width: 1199px) {
-        right: 30%;
+        right: -3%;
       }
       @media screen and (max-width: 991px) {
-        right: 8%;
+        right: -2%;
+        top: 10%;
+      }
+      @media screen and (max-width: 767px) {
+        top: 0%;
       }
       @media screen and (max-width: 575px) {
         right: 5%;
@@ -695,11 +711,11 @@ footer {
   }
   .middle-footer {
     padding: 40px 0;
-    @media screen and (max-width: 767px) {
-      padding: 30px 0;
+    @media screen and (max-width: 991px) {
+      padding: 30px 0 10px;
     }
     @media screen and (max-width: 575px) {
-      padding: 20px 0;
+      padding: 20px 0 10px;
     }
     .footer-widget {
       margin-bottom: 10px;
@@ -827,6 +843,13 @@ footer {
     }
   }
 }
+.cta-btn {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
 // HERO SECTION CSS
 .hero-section {
@@ -836,6 +859,12 @@ footer {
   align-items: center;
   @media screen and (max-width: 767px) {
     padding: 50px 0 20px;
+  }
+  .btn-primary {
+    margin-top: 20px;
+  }
+  h4 {
+    margin: 0;
   }
   .desc {
     max-width: 630px;
@@ -947,7 +976,7 @@ footer {
     .star-outline {
       position: absolute;
       top: 6%;
-      right: 3%;
+      right: -10%;
       @media screen and (max-width: 1199px) {
         top: 17%;
         right: 0;
@@ -961,6 +990,8 @@ footer {
       position: relative;
       @media screen and (max-width: 475px) {
         flex-direction: column;
+        align-items: start !important;
+        gap: 12px;
       }
       .btn {
         flex: none;
@@ -1137,6 +1168,9 @@ footer {
         right: 95%;
         width: 24px;
       }
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
     }
     .accordion-item {
       border: 0;
@@ -1154,8 +1188,39 @@ footer {
         height: 100%;
         min-height: 34px;
       }
+      &.active-item {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          border-radius: 5px;
+          background-color: $primary;
+          height: 0%;
+          animation: active-line 10s linear;
+        }
+      }
+      @keyframes active-line {
+        from {
+          height: 0;
+        }
+        to {
+          height: 100%;
+        }
+      }
       &:last-of-type {
         margin-bottom: 0;
+      }
+      .accordion-collapse {
+        max-height: 0;
+        display: block;
+        opacity: 0;
+        &.show {
+          max-height: 1000px;
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
     .accordion-button {
@@ -1169,23 +1234,11 @@ footer {
       font-size: 20px;
       margin-bottom: 8px;
       line-height: 1.5;
-      @media screen and (max-width: 767px) {
-        font-size: 18px;
-      }
       &::after {
         display: none;
       }
-      &:not(.collapsed) {
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: -30px;
-          height: 44px;
-          width: 4px;
-          background-color: $primary;
-          border-radius: 5px;
-        }
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
       }
     }
     .accordion-body {
@@ -1193,15 +1246,33 @@ footer {
     }
   }
   .image-container {
+    width: 100%;
+    @media screen and (max-width: 991px) {
+      max-width: 80%;
+      margin-left: auto;
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 90%;
+      margin-left: auto;
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+.section-main {
+  position: relative;
+  .accordion-slider-main {
     position: absolute;
-    bottom: 75px;
-    right: 0;
-    width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
     @media screen and (max-width: 991px) {
       position: static;
-      width: 100%;
-      max-width: 80%;
-      margin: 0 auto;
+      transform: translateY(0);
     }
   }
 }
@@ -1209,6 +1280,9 @@ footer {
 // SLIDER SECTION CSS
 .slider-section {
   padding: 50px 0;
+  @media screen and (max-width: 575px) {
+    padding: 30px 0 40px;
+  }
   &.home-slider {
     background-color: $gray-200;
   }
@@ -1257,6 +1331,7 @@ footer {
     .item {
       img {
         max-width: 188px;
+        width: 100%;
         margin: 0 auto;
       }
     }
@@ -1265,8 +1340,33 @@ footer {
 
 // ENTERPRISE CSS
 
+.responsive-content {
+  .image-wrapper {
+    text-align: center;
+    margin-top: 30px;
+    img {
+      max-height: 450px;
+    }
+  }
+  .content {
+    margin-top: 30px;
+    @media screen and (max-width: 575px) {
+      margin-top: 15px;
+    }
+    h4{
+      img{
+        @media screen and (max-width: 575px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
 .enterprise-section {
   position: relative;
+  .btn-primary {
+    width: fit-content;
+  }
   .empty-img {
     @media screen and (max-width: 991px) {
       max-width: 450px;
@@ -1276,7 +1376,7 @@ footer {
   }
   .privacy-img {
     position: absolute;
-    bottom: 128px;
+    bottom: 10px;
     right: 10%;
     width: 12vw;
     max-width: 200px;
@@ -1284,11 +1384,7 @@ footer {
       right: 5%;
     }
     @media screen and (max-width: 991px) {
-      width: 18vw;
-      bottom: 2%;
-    }
-    @media screen and (max-width: 575px) {
-      width: 24vw;
+      display: none;
     }
   }
   h4 {
@@ -1303,6 +1399,10 @@ footer {
   }
   .top-shape {
     margin-bottom: 78px;
+    width: fit-content;
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 35px;
+    }
     @media screen and (max-width: 991px) {
       display: none;
     }
@@ -1311,9 +1411,14 @@ footer {
     padding-left: 40%;
     display: block;
     padding-top: 68px;
+    width: fit-content;
+    @media screen and (max-width: 1199px) {
+      padding-left: 30%;
+      padding-top: 38px;
+    }
     @media screen and (max-width: 991px) {
-      padding-top: 24px;
-      padding-left: 8%;
+      padding-left: 60%;
+      margin-top: -60px;
     }
   }
   .desc-text {
@@ -1359,8 +1464,8 @@ footer {
           left: 5%;
         }
         @media screen and (max-width: 640px) {
-          left: 5%;
-          top: 5%;
+          left: 0%;
+          top: 2%;
         }
       }
       &.contact-star-outline1 {
@@ -1392,10 +1497,10 @@ footer {
     min-height: 790px;
   }
   @media screen and (max-width: 767px) {
-    min-height: 690px;
+    min-height: 620px;
   }
   @media screen and (max-width: 575px) {
-    min-height: 650px;
+    min-height: 530px;
   }
 }
 .contact-form {
@@ -1601,7 +1706,7 @@ footer {
         top: 20px;
       }
       @media screen and (max-width: 767px) {
-        height: calc(100% - 70px);
+        height: 62px;
         width: 2px;
         top: calc(100% + 10px);
         left: 50%;
@@ -2044,7 +2149,7 @@ footer {
   }
 }
 
-.releted-article-main{
+.releted-article-main {
   background-color: $gray-200;
   margin-bottom: 150px;
   @media screen and (max-width: 991px) {
@@ -2053,31 +2158,31 @@ footer {
   @media screen and (max-width: 767px) {
     margin-bottom: 50px;
   }
-  .heading{
+  .heading {
     margin-bottom: 58px;
   }
-  .cstm-card{
+  .cstm-card {
     border-radius: 8px;
     overflow: hidden;
     background-color: $white;
-    .card-image{
+    .card-image {
       max-height: 155px;
       height: 100%;
-      img{
+      img {
         height: 100%;
         width: 100%;
         object-fit: cover;
       }
     }
-    .card-content{
+    .card-content {
       padding: 15px 30px;
       @media screen and (max-width: 575px) {
         padding: 10px 16px;
       }
-      .head{
+      .head {
         margin-bottom: 8px;
-        h6{
-          color:  $dark-gray;
+        h6 {
+          color: $dark-gray;
           font-size: 20px;
           line-height: 1.5;
           margin-bottom: 0;
@@ -2085,15 +2190,15 @@ footer {
             font-size: 18px;
           }
         }
-        span{
+        span {
           color: $primary;
           padding: 4px 8px;
-          background-color: #F1FFFC;
+          background-color: #f1fffc;
           font-size: 12px;
           line-height: 1.66;
         }
       }
-      .description{
+      .description {
         display: block;
         color: $gray;
         font-size: 12px;
@@ -2101,16 +2206,22 @@ footer {
       }
     }
   }
-  .btn-primary{
+  .btn-primary {
     margin-top: 50px;
   }
 }
 
-.partner-hero-btn{
+.partner-hero-btn {
   margin-top: 30px;
   gap: 16px;
   position: relative;
-  img{
+  @media screen and (max-width: 575px) {
+    margin-top: 15px;
+  }
+  .btn-primary{
+    margin: 0;
+  }
+  img {
     position: absolute;
     top: 20%;
     transform: translateY(-50%);
@@ -2132,7 +2243,7 @@ footer {
     }
   }
 }
-.partner-verify{
+.partner-verify {
   position: absolute;
   bottom: 7%;
   right: -3vw;
@@ -2144,26 +2255,26 @@ footer {
     bottom: 32%;
   }
   @media screen and (max-width: 1199px) {
-    position: relative;;
+    position: relative;
     right: unset;
     bottom: unset;
     margin-top: 16px;
     width: auto;
   }
   @media screen and (max-width: 575px) {
-   width: 25vw;
+    width: 25vw;
   }
 }
-.tech-stake{
+.tech-stake {
   background-color: $light-gray-200;
-  .tech-wrap{
+  .tech-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     @media screen and (max-width: 1024px) {
       flex-direction: column;
     }
-    .content{
+    .content {
       @media screen and (max-width: 1024px) {
         text-align: center;
         margin-bottom: 45px;
@@ -2171,7 +2282,7 @@ footer {
       @media screen and (max-width: 575px) {
         margin-bottom: 20px;
       }
-      .desc{
+      .desc {
         max-width: 741px;
         margin: 8px 0 30px;
         @media screen and (max-width: 575px) {
@@ -2180,7 +2291,7 @@ footer {
       }
     }
   }
-  .logo-wrap{
+  .logo-wrap {
     padding: 0 15px; 
     position: relative;
     .top-star{
@@ -2201,7 +2312,7 @@ footer {
         bottom: -32px;
       }
     }
-    .icon{
+    .icon {
       max-height: 135px;
       max-width: 135px;
       height: 10vw;
@@ -2213,20 +2324,20 @@ footer {
       align-items: center;
       justify-content: center;
       transition: transform 0.3s ease-in-out;
-      & + .icon{
+      & + .icon {
         margin-left: 1.5vw;
         @media screen and (max-width: 575px) {
           margin-left: 2.5vw;
         }
       }
-      &:hover{
+      &:hover {
         transform: translateY(-15px);
       }
       @media screen and (max-width: 991px) {
         height: 15vw;
         width: 15vw;
       }
-      img{
+      img {
         @media screen and (max-width: 767px) {
           height: auto;
           width: 7vw;
@@ -2236,56 +2347,107 @@ footer {
   }
 }
 
-.partner-slider{
-  .partner-card{
+.partner-slider {
+  .partner-card {
     border: 1px solid $light-gray-500;
     border-radius: 11px;
     margin: 0 15px;
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
       margin: 0 6px;
     }
-    .head{
+    .head {
       padding: 16px 40px;
       background-color: $gray-200;
       border-radius: 11px 11px 0 0;
       @media screen and (max-width: 767px) {
         padding: 16px;
       }
-      p{
+      p {
         font-size: 16px;
         color: $dark-gray;
       }
     }
-    .body{
+    .body {
       padding: 40px;
       background-color: $white;
       border-radius: 0 0 11px 11px;
       @media screen and (max-width: 767px) {
         padding: 16px;
       }
-      .quote{
+      .quote {
         height: 39px;
         width: auto;
         @media screen and (max-width: 767px) {
           height: 26px;
         }
       }
-      .sm-heading{
+      .sm-heading {
         color: $primary;
         margin: 20px 0 30px;
       }
     }
   }
 }
-
-.heading-3m{
-  margin-bottom: 60px;
+.rotate {
+  animation: rotate 10s linear infinite;
 }
-.btn.btn-privacy{
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.project-slider-main {
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: -100px;
+  @media screen and (max-width: 1399px) {
+    margin-bottom: -170px;
+    margin-top: 0;
+  }
+  @media screen and (max-width: 1199px) {
+    margin-bottom: -210px;
+  }
+  @media screen and (max-width: 991px) {
+    margin-bottom: 0;
+  }
+  .project-content {
+    &:last-of-type {
+      margin-bottom: 100px;
+      @media screen and (max-width: 1399px) {
+        margin-bottom: 170px;
+      }
+      @media screen and (max-width: 1199px) {
+        margin-bottom: 210px;
+      }
+      @media screen and (max-width: 991px) {
+        margin-bottom: 0px;
+      }
+    }
+    .badge-group {
+      margin-bottom: 32px;
+
+      .badge {
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+.heading-3m {
+  margin-bottom: 60px;
+  @media screen and (max-width: 575px) {
+    margin-bottom: 40px;
+  }
+}
+.btn.btn-privacy {
   border: none;
   background-color: $gray-200;
   color: $light-gray-400;
-  img{
+  img {
     margin-right: 8px;
   }
 }
@@ -2331,7 +2493,7 @@ footer {
   &:not(:last-child) {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #DCDCDC;
+    border-bottom: 1px solid #dcdcdc;
     @media screen and (max-width: 575px) {
       margin-bottom: 15px;
       padding-bottom: 15px;
@@ -2355,10 +2517,10 @@ footer {
       height: 20px;
       margin-right: 10px;
       box-shadow: none;
-      &[type=radio] {
+      &[type="radio"] {
         + label {
           &:before {
-            content: '';
+            content: "";
             background-color: $primary;
             opacity: 0;
             width: 10px;
@@ -2371,7 +2533,7 @@ footer {
           }
         }
       }
-      &:checked[type=radio] {
+      &:checked[type="radio"] {
         background-image: none;
         border-color: $primary;
         + label {
@@ -2380,7 +2542,7 @@ footer {
           }
         }
       }
-      &:checked[type=checkbox] {
+      &:checked[type="checkbox"] {
         background-color: $primary;
         border-color: $primary;
       }
@@ -2509,7 +2671,8 @@ footer {
         background-color: transparent;
         font-weight: 600;
       }
-      &:active,&:focus {
+      &:active,
+      &:focus {
         box-shadow: none;
       }
     }
@@ -2520,7 +2683,8 @@ footer {
       height: 35px;
       display: inline-block;
     }
-    &:first-child, &:last-child {
+    &:first-child,
+    &:last-child {
       .page-link {
         width: auto;
         background-color: transparent;
@@ -2555,7 +2719,7 @@ footer {
 
 // get-started-wrapper
 
-.get-started-wrapper{
+.get-started-wrapper {
   border: 1px solid $light-gray-500;
   border-radius: 12px;
   display: flex;
@@ -2567,28 +2731,28 @@ footer {
   @media screen and (max-width: 575px) {
     padding: 40px 0;
   }
-  .top{
+  .top {
     position: absolute;
     top: -28px;
     right: 6%;
     width: 40px;
     height: auto;
   }
-  .bottom{
+  .bottom {
     position: absolute;
     bottom: -35px;
     right: 87%;
     width: 40px;
     height: auto;
     @media screen and (max-width: 991px) {
-    right: 0%;
+      right: 0%;
     }
     @media screen and (max-width: 575px) {
-    right: 20%;
+      right: 20%;
     }
   }
 
-  .get-started-card{
+  .get-started-card {
     padding: 40px;
     text-align: center;
     width: 33.33%;
@@ -2602,7 +2766,7 @@ footer {
     @media screen and (max-width: 575px) {
       width: 100%;
     }
-    &:nth-child(2){
+    &:nth-child(2) {
       border-left: 1px solid $gray-300;
       border-right: 1px solid $gray-300;
       @media screen and (max-width: 991px) {
@@ -2611,8 +2775,8 @@ footer {
       @media screen and (max-width: 575px) {
         border-left: 0;
       }
-    } 
-    .icons{
+    }
+    .icons {
       width: 48px;
       height: auto;
       max-height: 48px;
@@ -2622,7 +2786,7 @@ footer {
         max-height: 38px;
       }
     }
-    p{
+    p {
       color: $gray;
       font-size: 16px;
       line-height: 28px;
@@ -2649,5 +2813,55 @@ footer {
   }
   .input{
     padding-left: 60px;
+  }
+}
+.locker {
+  position: relative;
+}
+.locker__image {
+  position: relative;
+  grid-column: col-start 2 / col-end 6;
+}
+.locker__image .we {
+  width: auto;
+  height: auto;
+  position: absolute;
+  transition: all 1s ease;
+}
+.locker__container {
+  position: sticky;
+  top: 100px;
+  height: 100vh;
+}
+.locker__content {
+  grid-column: col-start 8 / center-end;
+}
+.locker__section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @media screen and (max-width: 1199px) {
+    height: 80vh;
+  }
+}
+
+.image-container-wrapper {
+  .image {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    max-height: 730px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &.active {
+      opacity: 1;
+    }
   }
 }
