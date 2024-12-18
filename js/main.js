@@ -51,6 +51,17 @@ $(".testimonial-slider").owlCarousel({
   },
 });
 
+$(".partner-slider").owlCarousel({
+  stagePadding: 400,
+  loop:true,
+  items:1,
+  lazyLoad: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true
+});
+
 const accordionButtons = document.querySelectorAll(".accordion-button");
 const dynamicImage = document.getElementById("dynamicImage");
 
