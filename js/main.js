@@ -7,76 +7,6 @@ $(window).scroll(function () {
   }
 });
 
-$(".company-slider, .trusted-company").slick({
-  speed: 5000,
-  autoplay: true,
-  autoplaySpeed: 0,
-  cssEase: 'linear',
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  infinite: true,
-  initialSlide: 1,
-  arrows: false,
-  buttons: false,
-  responsive: [
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1.5,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-      }
-    },
-    {
-      breakpoint: 1280,
-      settings: {
-        slidesToShow: 4,
-      }
-    },
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 5,
-      }
-    },
-  ]
-});
-
-$('.main-slider').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  fade: true,
-  asNavFor: '.thumb-slider' // Sync with thumb slider
-});
-
-// Thumbnail slider
-$('.thumb-slider').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  asNavFor: '.main-slider', // Sync with main slider
-  dots: false,
-  focusOnSelect: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
-});
-
 $(".testimonial-slider").owlCarousel({
   loop: true,
   margin: 0,
@@ -228,4 +158,74 @@ function resetAutoplay(index) {
 document.addEventListener("DOMContentLoaded", () => {
   expandAccordion(0); // Set the first accordion as active by default
   autoplayInterval = setInterval(autoplay, 10000); // Start autoplay every 5 seconds
+});
+
+$(".company-slider, .trusted-company").slick({
+  speed: 5000,
+  autoplay: true,
+  autoplaySpeed: 0,
+  cssEase: 'linear',
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  infinite: true,
+  initialSlide: 1,
+  arrows: false,
+  buttons: false,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.5,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 5,
+      }
+    },
+  ]
+});
+
+$('.main-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  asNavFor: '.thumb-slider' // Sync with thumb slider
+});
+
+// Thumbnail slider
+$('.thumb-slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: '.main-slider', // Sync with main slider
+  dots: false,
+  focusOnSelect: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
 });
