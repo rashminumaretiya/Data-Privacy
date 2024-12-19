@@ -9,6 +9,10 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    />
   <link rel="stylesheet" href="./styles/slick.css">
   <link rel="stylesheet" href="./styles/slick-theme.css">
   <link rel="stylesheet" href="styles/style.css" />
@@ -101,7 +105,7 @@
               <span>Become a Partner</span> <i class="fa-solid fa-arrow-right"></i>
             </button>
             <button type="button" class="btn btn-secondary">
-              <span>Become a Demo</span> <i class="fa-solid fa-arrow-right"></i>
+              <span>View a Demo</span> <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
           <img src="/assets/images/svg/partner-verify.svg" alt="" class="partner-verify">
@@ -109,50 +113,63 @@
         <div class="col-lg-6">
           <div class="contact-form-wrapper">
             <div class="row">
-              <div class="col-sm-6 col-12">
+              <div class="col-md-6 col-lg-12 col-xl-6 col-12">
                 <div class="form-group">
-                  <label>Full Name*</label>
-                  <input type="text" placeholder="Enter full name" class="form-control" />
+                  <label>First Name*</label>
+                  <input type="text" placeholder="Enter your first name" class="form-control" />
                 </div>
               </div>
-              <div class="col-sm-6 col-12">
+              <div class="col-md-6 col-lg-12 col-xl-6 col-12">
                 <div class="form-group">
-                  <label>Business email*</label>
-                  <input type="text" placeholder="Enter Email" class="form-control" />
+                  <label>Last Name*</label>
+                  <input type="text" placeholder="Enter your last name" class="form-control" />
                 </div>
               </div>
-              <div class="col-sm-6 col-12">
+              <div class="col-md-6 col-lg-12 col-xxl-6 col-12">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" placeholder="Enter your email address" class="form-control" />
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12 col-xxl-6 col-12">
                 <div class="form-group">
                   <label>Phone Number*</label>
-                  <input type="text" placeholder="Enter phone number" class="form-control" />
+                  <div class="d-flex country-dropdown">
+                    <select id="countrySelect" class="form-control form-select name" onchange="updateCountryCode()"></select>
+                     <div class="position-relative flex-fill ms-2">
+                      <div class="upper" id="phoneCode"></div>
+                       <input type="number" placeholder="Enter phone number" value="" class="form-control input">
+                     </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-sm-6 col-12">
+              <div class="col-md-6 col-lg-12 col-xl-6 col-12">
                 <div class="form-group">
                   <label>Company Name*</label>
                   <input type="text" placeholder="Enter your company name" class="form-control" />
                 </div>
               </div>
-              <div class="col-sm-6 col-12">
+              <div class="col-md-6 col-lg-12 col-xl-6 col-12">
                 <div class="form-group">
-                  <label>Company Size*</label>
+                  <label>Company Size</label>
                   <input type="text" placeholder="Enter your company size" class="form-control" />
                 </div>
               </div>
-              <div class="col-sm-6 col-12">
+              <div class="col-md-6 col-lg-12 col-xl-6 col-12">
                 <div class="form-group">
-                  <label>Company Business*</label>
-                  <input type="text" placeholder="What’s the main business of your company" class="form-control" />
+                  <label>Company Business</label>
+                  <input type="text" placeholder="What's the main business of company?" class="form-control" />
                 </div>
               </div>
-              <div class="col-12">
+              <div class="col-md-6 col-lg-12 col-xl-6 col-12">
                 <div class="form-group">
                   <label>Interested As*</label>
                   <select class="form-select" aria-label="Default select example">
                     <option selected>What are you interested as?</option>
-                    <option value="1">value 1</option>
-                    <option value="2">value 2</option>
-                    <option value="3">value 3</option>
+                    <option value="1">Customer</option>
+                    <option value="2">Partner</option>
+                    <option value="3">Referrer</option>
+                    <option value="4">Investor</option>
                   </select>
                 </div>
               </div>
@@ -161,6 +178,20 @@
                   <label>Message*</label>
                   <textarea rows="2" type="text" placeholder="Enter URL" class="form-control"></textarea>
                 </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <p class="check-content">We'll use your data only to contact you for our products and services. We may share your data with our partners in case you are an end customer.</p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  I consent to DataVizz to collect my data.
+                </label>
               </div>
             </div>
             <div class="form-group mb-0">
@@ -766,11 +797,14 @@
   <script src="/js/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
     <script src="./js/slick.min.js"></script>
     <script src="/js/velocity.min.js"></script>
     <script src="/js/velocity.ui.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/main.js"></script>
-</body>
+    <script src="/js/CountrySelect.js"></script>
+  </body>
 
 </html>

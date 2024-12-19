@@ -26725,4 +26725,9 @@ footer .bottom-footer ul li a:hover {
 }
 .image-container-wrapper .image.active {
   opacity: 1;
+}
+
+.check-content {
+  font-size: 14px;
+  margin-bottom: 16px;
 }/*# sourceMappingURL=style.css.map */
