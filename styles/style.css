@@ -26017,46 +26017,20 @@ footer .bottom-footer ul li a:hover {
 }
 @media screen and (max-width: 575px) {
   .partner-hero-btn img {
-    left: unset;
-    right: 0;
-    top: -25px;
-  }
-}
-@media screen and (max-width: 433px) {
-  .partner-hero-btn img {
-    top: 50%;
-    right: 30px;
+    display: none;
   }
 }
 
 .partner-verify {
-  position: absolute;
-  bottom: 7%;
-  right: -3vw;
-}
-@media screen and (max-width: 1599px) {
-  .partner-verify {
-    right: -6vw;
-    width: 8vw;
-  }
-}
-@media screen and (max-width: 1399px) {
-  .partner-verify {
-    bottom: 32%;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .partner-verify {
-    position: relative;
-    right: unset;
-    bottom: unset;
-    margin-top: 16px;
-    width: auto;
-  }
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
 }
 @media screen and (max-width: 575px) {
   .partner-verify {
-    width: 25vw;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
