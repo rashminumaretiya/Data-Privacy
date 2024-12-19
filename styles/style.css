@@ -26458,7 +26458,7 @@ footer .bottom-footer ul li a:hover {
 }
 .partner-result-wrapper .search-tag span {
   background-color: #ffffff;
-  padding: 5px 10px;
+  padding: 7.5px 12px;
   border-radius: 30px;
   display: inline-block;
   color: #101c34;
@@ -26490,7 +26490,10 @@ footer .bottom-footer ul li a:hover {
 .partner-card {
   border-radius: 12px;
   background-color: #ffffff;
-  margin-bottom: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .partner-card .partner-info {
   padding: 30px 30px 16px;
@@ -26499,18 +26502,32 @@ footer .bottom-footer ul li a:hover {
 }
 .partner-card .partner-info .partner-content img {
   margin-bottom: 30px;
+  max-width: 50%;
 }
-.partner-card .partner-info .partner-content h6, .partner-card .partner-info .partner-content .h6 {
+.partner-card .partner-info .partner-content span {
+  display: block;
   font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  color: #101c34;
 }
 .partner-card .partner-info .partner-content p {
   line-height: 26px;
   font-size: 14px;
   margin-bottom: 0;
+  font-weight: 700;
+  color: #101c34;
+  margin-bottom: 18px;
 }
 .partner-card .partner-info .partner-verify-logo {
   max-width: 85px;
   width: 100%;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.partner-card .partner-link {
+  margin-top: auto;
 }
 .partner-card .partner-link a {
   color: #00b894;
@@ -26529,6 +26546,7 @@ footer .bottom-footer ul li a:hover {
 
 .pagination {
   align-items: center;
+  margin-top: 40px;
 }
 .pagination .page-item .page-link {
   border: 1px solid #e1e1e1;
