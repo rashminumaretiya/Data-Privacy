@@ -860,6 +860,11 @@ footer {
   @media screen and (max-width: 767px) {
     padding: 50px 0 20px;
   }
+  .star-group{
+    position: absolute;
+    bottom: 15px;
+    left: 50px;
+  }
   .btn-primary {
     margin-top: 20px;
   }
@@ -1285,6 +1290,9 @@ footer {
   }
   &.home-slider {
     background-color: $gray-200;
+    p{
+      margin-bottom: 30px;
+    }
   }
   .company-slider {
     position: relative;
@@ -1434,6 +1442,27 @@ footer {
 }
 
 /* Contact Styles */
+.new-logo-section{
+  gap: 140px;
+  @media screen and (max-width: 991px) {
+    gap: 85px;
+    img{
+      max-width: 80px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    gap: 60px;
+    img{
+      max-width: 60px;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    gap: 40px;
+    img{
+      max-width: 60px;
+    }
+  }
+}
 .banner-wrapper {
   background-color: $gray-200;
   padding: 100px 0;
@@ -1546,13 +1575,13 @@ footer {
   position: relative;
   .pricing-star1 {
     position: absolute;
-    top: 19%;
+    top: 15%;
     left: 17%;
   }
   .pricing-star2 {
     position: absolute;
-    top: 22%;
-    right: 30%;
+    top: 25%;
+    right: 26%;
     width: 30px;
   }
   .pricing-green-group {
@@ -1930,6 +1959,16 @@ footer {
       h2 {
         max-width: 716px;
         margin-bottom: 18px;
+        font-size: 50px;
+        @media screen and (max-width: 1440px) {
+          font-size: 45px;
+        }
+        @media screen and (max-width: 575px) {
+          font-size: 37px;
+        }
+        @media screen and (max-width: 425px) {
+          font-size: 28px;
+        }
       }
       img {
         position: absolute;
@@ -2005,9 +2044,9 @@ footer {
           padding: 0 20px 0 30px;
         }
         li {
-          font-size: 20px;
+          font-size: 16px;
           line-height: 1.6;
-          margin-bottom: 35px;
+          margin-bottom: 30px;
           color: $gray;
           @media screen and (max-width: 1199px) {
             font-size: 18px;

@@ -24434,6 +24434,11 @@ footer .bottom-footer ul li a:hover {
     padding: 50px 0 20px;
   }
 }
+.hero-section .star-group {
+  position: absolute;
+  bottom: 15px;
+  left: 50px;
+}
 .hero-section .btn-primary {
   margin-top: 20px;
 }
@@ -24926,6 +24931,9 @@ footer .bottom-footer ul li a:hover {
 .slider-section.home-slider {
   background-color: #f8f8f8;
 }
+.slider-section.home-slider p {
+  margin-bottom: 30px;
+}
 .slider-section .company-slider {
   position: relative;
 }
@@ -25085,6 +25093,34 @@ footer .bottom-footer ul li a:hover {
 }
 
 /* Contact Styles */
+.new-logo-section {
+  gap: 140px;
+}
+@media screen and (max-width: 991px) {
+  .new-logo-section {
+    gap: 85px;
+  }
+  .new-logo-section img {
+    max-width: 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .new-logo-section {
+    gap: 60px;
+  }
+  .new-logo-section img {
+    max-width: 60px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .new-logo-section {
+    gap: 40px;
+  }
+  .new-logo-section img {
+    max-width: 60px;
+  }
+}
+
 .banner-wrapper {
   background-color: #f8f8f8;
   padding: 100px 0;
@@ -25237,13 +25273,13 @@ footer .bottom-footer ul li a:hover {
 }
 .pricing-section .pricing-star1 {
   position: absolute;
-  top: 19%;
+  top: 15%;
   left: 17%;
 }
 .pricing-section .pricing-star2 {
   position: absolute;
-  top: 22%;
-  right: 30%;
+  top: 25%;
+  right: 26%;
   width: 30px;
 }
 .pricing-section .pricing-green-group {
@@ -25661,6 +25697,22 @@ footer .bottom-footer ul li a:hover {
 .regulation-section .regulation-content-main .heading h2, .regulation-section .regulation-content-main .heading .h2 {
   max-width: 716px;
   margin-bottom: 18px;
+  font-size: 50px;
+}
+@media screen and (max-width: 1440px) {
+  .regulation-section .regulation-content-main .heading h2, .regulation-section .regulation-content-main .heading .h2 {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .regulation-section .regulation-content-main .heading h2, .regulation-section .regulation-content-main .heading .h2 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .regulation-section .regulation-content-main .heading h2, .regulation-section .regulation-content-main .heading .h2 {
+    font-size: 28px;
+  }
 }
 .regulation-section .regulation-content-main .heading img {
   position: absolute;
@@ -25750,9 +25802,9 @@ footer .bottom-footer ul li a:hover {
   }
 }
 .regulation-section .regulation-content-main .content-wrapper ul li {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   color: #5f5f5f;
 }
 @media screen and (max-width: 1199px) {
